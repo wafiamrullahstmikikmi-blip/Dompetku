@@ -16,6 +16,7 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#2563eb" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
       </head>
       <body className="bg-background text-foreground antialiased min-h-screen flex flex-col">
         {children}
