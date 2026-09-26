@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import InstallPWA from "@/components/InstallPWA";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,7 +19,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#2563eb" />
         <link rel="apple-touch-icon" href="/icon.svg" />
       </head>
-      <body className="bg-background text-foreground antialiased min-h-screen flex flex-col">
+      <body className="bg-background text-foreground antialiased min-h-screen flex flex-col pt-14 md:pt-0">
+        <InstallPWA />
         {children}
         <script
           dangerouslySetInnerHTML={{
