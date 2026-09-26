@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import React from 'react'
 
 export const runtime = 'edge'
 
@@ -8,9 +9,10 @@ export async function GET(request: Request) {
   const size = parseInt(sizeStr, 10)
 
   return new ImageResponse(
-    (
-      <div
-        style={{
+    React.createElement(
+      'div',
+      {
+        style: {
           background: '#2563eb',
           width: '100%',
           height: '100%',
@@ -18,12 +20,15 @@ export async function GET(request: Request) {
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: size > 200 ? '128px' : '32px',
-        }}
-      >
-        <div style={{ color: 'white', fontSize: size / 2, fontWeight: 'bold' }}>
-          DK
-        </div>
-      </div>
+        }
+      },
+      React.createElement(
+        'div',
+        {
+          style: { color: 'white', fontSize: size / 2, fontWeight: 'bold' }
+        },
+        'DK'
+      )
     ),
     {
       width: size,
