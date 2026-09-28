@@ -24,7 +24,7 @@ export default function TransactionForm({ categories }: { categories: any[] }) {
     <form ref={formRef} action={handleSubmit} className="space-y-4">
       <div>
         <label className="block text-sm font-medium text-slate-700 mb-1">Jenis</label>
-        <select name="type" className="w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-2 border outline-none focus:border-blue-500 focus:bg-white transition-colors" required>
+        <select name="type" className="w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-2 border outline-none text-slate-900 focus:border-blue-500 focus:bg-white transition-colors" required>
           <option value="expense">Pengeluaran</option>
           <option value="income">Pemasukan</option>
         </select>
@@ -32,18 +32,18 @@ export default function TransactionForm({ categories }: { categories: any[] }) {
 
       <div>
         <label className="block text-sm font-medium text-slate-700 mb-1">Tanggal</label>
-        <input type="date" name="date" required defaultValue={new Date().toISOString().split('T')[0]} className="w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-2 border outline-none focus:border-blue-500 focus:bg-white transition-colors" />
+        <input type="date" name="date" required defaultValue={new Date().toISOString().split('T')[0]} className="w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-2 border outline-none text-slate-900 focus:border-blue-500 focus:bg-white transition-colors" />
       </div>
 
       <div>
         <label className="block text-sm font-medium text-slate-700 mb-1">Jumlah (Rp)</label>
-        <input type="number" name="amount" required min="1" placeholder="Contoh: 50000" className="w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-2 border outline-none focus:border-blue-500 focus:bg-white transition-colors" />
+        <input type="number" name="amount" required min="1" placeholder="Contoh: 50000" className="w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-2 border outline-none text-slate-900 focus:border-blue-500 focus:bg-white transition-colors" />
       </div>
 
       <div>
         <label className="block text-sm font-medium text-slate-700 mb-1">Kategori</label>
         {categories && categories.length > 0 ? (
-          <select name="category_id" className="w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-2 border outline-none focus:border-blue-500 focus:bg-white transition-colors" required>
+          <select name="category_id" className="w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-2 border outline-none text-slate-900 focus:border-blue-500 focus:bg-white transition-colors" required>
             <option value="">-- Pilih Kategori --</option>
             {categories.map((cat) => (
               <option key={cat.id} value={cat.id}>{cat.icon} {cat.name}</option>
@@ -62,7 +62,7 @@ export default function TransactionForm({ categories }: { categories: any[] }) {
 
       <div>
         <label className="block text-sm font-medium text-slate-700 mb-1">Deskripsi</label>
-        <textarea name="description" placeholder="Catatan transaksi..." className="w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-2 border outline-none focus:border-blue-500 focus:bg-white transition-colors h-24 resize-none"></textarea>
+        <textarea name="description" placeholder="Catatan transaksi..." className="w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-2 border outline-none text-slate-900 focus:border-blue-500 focus:bg-white transition-colors h-24 resize-none"></textarea>
       </div>
 
       <button disabled={isSubmitting} type="submit" className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium py-3 rounded-xl transition-colors">
