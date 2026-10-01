@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Home, List, PieChart, Target } from 'lucide-react'
+import { Home, List, PieChart, Target, LogOut } from 'lucide-react'
+import { logout } from '@/app/actions/auth'
 
 export default function BottomNav() {
   const pathname = usePathname()
@@ -32,6 +33,13 @@ export default function BottomNav() {
           </Link>
         )
       })}
+      
+      <form action={logout} className="flex flex-col items-center justify-center w-full py-3 gap-1 text-slate-500 hover:text-red-500">
+        <button type="submit" className="flex flex-col items-center gap-1 w-full">
+          <LogOut className="w-5 h-5" />
+          <span className="text-[10px] font-medium">Keluar</span>
+        </button>
+      </form>
     </nav>
   )
 }

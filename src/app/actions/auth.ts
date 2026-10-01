@@ -7,15 +7,20 @@ import { createClient } from '@/utils/supabase/server'
 export async function login(formData: FormData) {
   const supabase = createClient()
 
+  let identifier = formData.get('username') as string
+  if (!identifier.includes('@')) {
+    identifier = `${identifier}@dompetku.local`
+  }
+
   const data = {
-    email: formData.get('email') as string,
+    email: identifier,
     password: formData.get('password') as string,
   }
 
   const { error } = await supabase.auth.signInWithPassword(data)
 
   if (error) {
-    redirect('/login?message=' + error.message)
+    redirect('/login?message=Username atau Password salah')
   }
 
   revalidatePath('/', 'layout')
@@ -25,8 +30,13 @@ export async function login(formData: FormData) {
 export async function signup(formData: FormData) {
   const supabase = createClient()
 
+  let identifier = formData.get('username') as string
+  if (!identifier.includes('@')) {
+    identifier = `${identifier}@dompetku.local`
+  }
+
   const data = {
-    email: formData.get('email') as string,
+    email: identifier,
     password: formData.get('password') as string,
   }
 

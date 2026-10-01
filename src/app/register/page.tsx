@@ -32,13 +32,13 @@ export default function RegisterPage({
       <form className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground">
         <h1 className="text-2xl font-bold text-center mb-6">Daftar DompetKu</h1>
         
-        <label className="text-md" htmlFor="email">
-          Email
+        <label className="text-md" htmlFor="username">
+          Username (Bebas)
         </label>
         <input
           className="rounded-md px-4 py-2 bg-inherit border mb-6"
-          name="email"
-          placeholder="anda@email.com"
+          name="username"
+          placeholder="contoh: wafi123"
           required
         />
         

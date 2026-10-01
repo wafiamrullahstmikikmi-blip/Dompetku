@@ -32,13 +32,13 @@ export default function LoginPage({
       <form className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground">
         <h1 className="text-2xl font-bold text-center mb-6">Masuk ke DompetKu</h1>
         
-        <label className="text-md" htmlFor="email">
-          Email
+        <label className="text-md" htmlFor="username">
+          Username
         </label>
         <input
           className="rounded-md px-4 py-2 bg-inherit border mb-6"
-          name="email"
-          placeholder="anda@email.com"
+          name="username"
+          placeholder="wafi123"
           required
         />
         
